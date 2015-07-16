@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        // 'use strict';
+
+        function test() {
+            console.log('test');
+        }
+
+        test();
+
+        // test global variable - polluting the global scope
+        // two statements
+
+        // immediately invoked function expression
+
+        (function check(name) {
+            console.log('checking for ', name);
+            console.log(this); // invocation context
+        }('Ronak'));
+
+        console.log(typeof check);
+
+        // global object
+        var global = (function () { return this; }());
+
+        console.log(global);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

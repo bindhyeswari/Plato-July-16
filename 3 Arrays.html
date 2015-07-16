@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        var x = [1,2,3,4];
+        var y = new Array(23);
+        var z = new Array(1,2,3,4);
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+
+
+        console.log('parent of x is ', Object.getPrototypeOf(x) === Array.prototype);
+
+        for (var i = 0; i < 10; i++) {
+
+        }
+
+        console.log(Object.getOwnPropertyNames(Array.prototype));
+
+        x.forEach(function (elem, index, arr) {
+            console.log('elem, index, arr', elem, index, arr);
+        });
+
+        function test() { // lexical scoping
+            var d = 100;
+        }
+
+        console.log(typeof i);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        function test() { // Variable hoisting
+            // var x;
+            console.log(c);
+            var c = 10; // ; c = 10
+        }
+
+        test();
+
+        function info() { // Function hoisting
+
+            check();
+
+            function check() {
+                console.log('checking ... ');
+            }
+        }
+
+        info();
+
+        function x() {
+
+            y(); // undefined()
+
+            var y = function () {
+                console.log('y');
+            };
+        }
+
+        x();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
