@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        // methods, functions, (call, apply, bind)
+
+        var o = {
+            name: 'Natalie',
+            sayHello: function () {
+                console.log('Hello World from ' + this.name);
+            }
+        };
+
+        o.sayHello();
+
+        var n = {
+            name: 'Ronak'
+        };
+
+        o.sayHello.call(n);
+        o.sayHello.apply(n);
+
+        function invoke() {
+
+            console.log('arguments for invoke function: ', arguments);
+            var fn = arguments[0];
+            var args = [];
+            for (var i = 1; i < arguments.length; i++) {
+                args.push(arguments[i]);
+            }
+            // args - [1, 2]
+            console.log(args);
+            console.log(fn.apply(null, args));
+        }
+
+        function sum(x, y) { // functions are first class objects in JS - properites / methods / arguments
+            return x + y;
+        }
+
+        function square(x) { // functions are first class objects in JS - properites / methods / arguments
+            return x * x;
+        }
+
+        invoke(sum, 1, 2);
+        invoke(square, 2);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
