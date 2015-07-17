@@ -8,6 +8,64 @@
 
         console.log(countries[0]);
 
+        countries.forEach(function (country) {
+            //console.log(country.name);
+        }); // function
+
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        var squared = arr.map(function (elem) {
+            return elem * elem;
+        }); // [1, 4, 9, 16, 25]
+        // console.log(squared);
+
+        // print out all the bordering country names for all countries
+        var dict_code_to_country = {};
+        countries.forEach(function (country) {
+            dict_code_to_country[country['alpha3Code']] = country.name;
+        });
+        // console.log(dict_code_to_country);
+
+        countries.forEach(function (country) {
+            /*console.log(country.borders.map(function (alpha3Code) {
+                return dict_code_to_country[alpha3Code];
+            }));*/
+        });
+
+        //
+        var sum = arr.reduce(function (prev, curr) {
+            return prev + curr;
+        }, 0); // arr --> [1,2,3,4,5]
+        // first time --> prev = 0, curr = arr[0] = 1
+        // second time --> prev = return value = 0 + 1 = 1, curr = arr[1] = 2
+        // if the optional value is not provided, prev --> arr[0], curr --> arr[1]
+        console.log(sum);
+
+        // total population
+        var population = countries.reduce(function (total, country) {
+            return total + country.population;
+        }, 0);
+        console.log(population);
+
+        // filter function
+        var odds = arr.filter(function (num) {
+            return num % 2 !== 0;
+        });
+
+        console.log(odds);
+
+        // all the country names as an array which have no bordering countries
+        var countries_no_borders = countries.filter(function (country) {
+            return country.borders.length === 0;
+        }).map(function (country) {
+            return country.name;
+        });
+
+        console.log(countries_no_borders);
+
+        // print all country names sorted by population
+        // print all country names sorted by number of neighboring countries
+
+
     </script>
 </head>
 <body>
